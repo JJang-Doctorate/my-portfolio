@@ -7,38 +7,187 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>안녕하세요! 제 포트폴리오 웹사이트입니다.</h1>
+        <a href="#" class="site-title">짱교수's 소개</a>
+        <nav>
+            <ul>
+                <li><a href="#">프로필</a></li>
+                <li><a href="#career">포트폴리오</a></li>
+            </ul>
+        </nav>
+        <label class="theme-switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+        </label>
     </header>
 
     <main>
-        <h2>자기소개</h2>
-        <p>안녕하세요! 저는 웹 개발에 열정을 가진 [당신의 이름]입니다. 새로운 기술을 배우고 실제 프로젝트에 적용하는 것을 즐깁니다. 이 웹사이트는 저의 기술과 경험을 보여주기 위해 만들었습니다.</p>
-
-        <h2>포트폴리오</h2>
-        <div class="portfolio-item">
-            <h3>프로젝트 1 제목</h3>
-            <p>이곳에 프로젝트 1에 대한 간략한 설명을 작성합니다. 사용 기술: HTML, CSS, JavaScript</p>
-            <a href="#" target="_blank">프로젝트 보러가기</a>
-        </div>
-        <div class="portfolio-item">
-            <h3>프로젝트 2 제목</h3>
-            <p>이곳에 프로젝트 2에 대한 간략한 설명을 작성합니다. 사용 기술: React, Node.js</p>
-            <a href="#" target="_blank">프로젝트 보러가기</a>
+        <div id="about" class="about-container">
+            <img src="images/profile.jpg" alt="프로필 사진" class="profile-pic">
+            <div class="about-text">
+                <p>이름: 장동현</p>
+            </div>
         </div>
 
-        <h2>연락처</h2>
-        <ul class="contact-list">
-            <li><strong>이메일:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></li>
-        </ul>
-    </main>
+        <div class="link-banners-container">
+            <div class="link-banner youtube-banner">
+                <a href="https://www.youtube.com/your-channel-url" target="_blank">
+                    <p><strong>유튜브 채널 보러가기</strong> 🎬</p>
+                </a>
+            </div>
+            <div class="link-banner blog-banner">
+                <a href="https://your-blog-url.com" target="_blank">
+                    <p><strong>블로그 보러가기</strong> 📝</p>
+                </a>
+            </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2025 [당신의 이름]. All Rights Reserved.</p>
-    </footer>
+        <hr class="section-divider">
+
+                <div class="portfolio-grid-container">
+
+                    <div id="career" class="portfolio-category-group" data-modal-target="#career-modal">
+
+                        <h3>커리어 (Career)</h3>
+
+                        <div class="portfolio-item">
+
+                            <h4>[회사명/프로젝트명]</h4>
+
+                            <p>이곳에 경력 관련 설명을 작성합니다. 담당했던 역할, 주요 성과 등을 요약하여 기술합니다.</p>
+
+                        </div>
+
+                    </div>
+
+        
+
+                    <div class="portfolio-category-group" data-modal-target="#education-modal">
+
+                        <h3>교육 콘텐츠 (Educational Content)</h3>
+
+                        <div class="portfolio-item">
+
+                            <h4>[강의명/콘텐츠명]</h4>
+
+                            <p>이곳에 제작하거나 참여한 교육 콘텐츠에 대한 설명을 작성합니다.</p>
+
+                        </div>
+
+                    </div>
+
+        
+
+                    <div class="portfolio-category-group" data-modal-target="#other-modal">
+
+                        <h3>기타 콘텐츠 (Other Content)</h3>
+
+                        <div class="portfolio-item">
+
+                            <h4>[콘텐츠명]</h4>
+
+                            <p>이곳에 블로그 포스팅, 외부 기고 등 기타 콘텐츠 관련 설명을 작성합니다.</p>
+
+                        </div>
+
+                    </div>
+
+        
+
+                    <div class="portfolio-category-group" data-modal-target="#programs-modal">
+
+                        <h3>자체 제작 프로그램 (Self-produced Programs)</h3>
+
+                        <div class="portfolio-item">
+
+                            <h4>[프로그램명]</h4>
+
+                            <p>이곳에 직접 제작한 프로그램에 대한 설명을 작성합니다.</p>
+
+                            <a href="#" target="_blank">프로그램 보러가기</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+        
+
+            <!-- Modals -->
+
+            <div id="career-modal" class="modal">
+
+                <div class="modal-content">
+
+                    <span class="close-button">&times;</span>
+
+                    <h2>커리어 (Career)</h2>
+
+                    <p>이곳에 커리어에 대한 상세 내용을 작성합니다. 여러 프로젝트 경험, 성과 등을 자세히 기술할 수 있습니다.</p>
+
+                </div>
+
+            </div>
+
+        
+
+            <div id="education-modal" class="modal">
+
+                <div class="modal-content">
+
+                    <span class="close-button">&times;</span>
+
+                    <h2>교육 콘텐츠 (Educational Content)</h2>
+
+                    <p>이곳에 교육 콘텐츠에 대한 상세 내용을 작성합니다.</p>
+
+                </div>
+
+            </div>
+
+        
+
+            <div id="other-modal" class="modal">
+
+                <div class="modal-content">
+
+                    <span class="close-button">&times;</span>
+
+                    <h2>기타 콘텐츠 (Other Content)</h2>
+
+                    <p>이곳에 기타 콘텐츠에 대한 상세 내용을 작성합니다.</p>
+
+                </div>
+
+            </div>
+
+        
+
+            <div id="programs-modal" class="modal">
+
+                <div class="modal-content">
+
+                    <span class="close-button">&times;</span>
+
+                    <h2>자체 제작 프로그램 (Self-produced Programs)</h2>
+
+                    <p>이곳에 자체 제작 프로그램에 대한 상세 내용을 작성합니다.</p>
+
+                </div>
+
+            </div>
+
+    </body>
+
+    <button id="backToTopBtn" title="Go to top">↑</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
