@@ -117,21 +117,68 @@ main h3 {
 
 .portfolio-grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px; /* Keep column gap */
+    row-gap: 40px;    /* Increase row gap */
     max-width: 1200px;
-    margin: 60px auto;
+    margin: 20px auto 60px; /* Reduce top margin */
     padding: 0 20px;
 }
 
 .portfolio-category-group h3 {
     margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center;
+    margin-bottom: 10px;
+    text-align: left;
     border-bottom: none;
     padding-bottom: 0;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: var(--text-color);
+}
+
+.image-banner {
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 150px; /* Give it a height */
+    cursor: pointer;
+    position: relative; /* For overlay and text */
+    overflow: hidden; /* To keep overlay within border-radius */
+}
+
+.image-banner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.image-banner-career {
+    background-image: url('images/커리어.png');
+}
+
+.image-banner-column {
+    background-image: url('images/칼럼.png');
+}
+
+.image-banner-edu {
+    background-image: url('images/교육콘텐츠(자체제작).png');
+    background-position: center 20%;
+}
+
+.image-banner-program {
+    background-image: url('images/프로그램(자체제작).png');
+}
+
+.image-banner-webnovel {
+    background-image: url('images/웹소설(자체제작).jpg');
+}
+
+.image-banner-webtoon {
+    background-image: url('images/웹툰(자체제작).png');
+}
+
+.image-banner-animation {
+    background-image: url('images/애니메이션(자체제작).jpg');
 }
 
 .portfolio-item {
@@ -139,7 +186,7 @@ main h3 {
     background-color: var(--card-bg-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -150,10 +197,12 @@ main h3 {
 
 .portfolio-item h4 {
     color: var(--text-color);
+    margin: 0;
 }
 
 .portfolio-item p {
     color: var(--text-color-light);
+    margin: 5px 0 0 0;
 }
 
 .portfolio-item a {
@@ -181,36 +230,40 @@ main h3 {
     height: 2px;
     background-color: var(--border-color);
     max-width: 1000px;
-    margin: 80px auto;
+    margin: 40px auto;
 }
 
 /* Link Banners Section */
 .link-banners-container {
     max-width: 800px; /* 전체 컨테이너 너비 */
-    margin: 80px auto; /* 가운데 정렬 */
+    margin: 40px auto; /* 상하 여백 줄임 */
     display: flex; /* Flexbox 사용 */
-    flex-direction: column; /* 세로로 나열 */
-    align-items: flex-start; /* 왼쪽 정렬 */
+    flex-direction: row; /* 가로로 나열 */
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
     gap: 20px; /* 배너 사이 간격 */
 }
 
 .link-banner {
-    max-width: 350px; /* 배너 사이즈 줄임 */
+    max-width: 250px; /* 배너 사이즈 줄임 */
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 .link-banner:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
+
 .link-banner a {
     display: block;
-    padding: 15px 25px; /* 패딩 줄임 */
+    padding: 8px 15px; /* 패딩 줄임 */
     color: white;
     text-decoration: none;
     text-align: center;
 }
+
 .link-banner p {
     margin: 0;
     font-size: 1.1em;
@@ -224,6 +277,10 @@ main h3 {
 
 .portfolio-category-group {
     cursor: pointer; /* 클릭 가능함을 암시 */
+}
+
+a.portfolio-category-group {
+    text-decoration: none;
 }
 
 .blog-banner {
@@ -253,6 +310,30 @@ main h3 {
     border-radius: 12px;
     position: relative;
     animation: modalopen 0.5s;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.history-entry {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.history-date {
+    width: 200px;
+    font-weight: bold;
+    color: var(--text-color-light);
+}
+
+.history-description {
+    flex: 1;
 }
 
 @keyframes modalopen {
@@ -354,4 +435,83 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(26px);
+}
+
+/* Hover effects for image banners */
+.banner-hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.image-banner::before { /* The overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* The border-radius should be slightly smaller than the parent to not cover the border */
+    border-radius: 6px; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.image-banner:hover::before,
+.image-banner:hover .banner-hover-text {
+    opacity: 1;
+}
+
+.highlight-text {
+    color: #007bff; /* blue */
+    font-weight: bold;
+    animation: blink-animation 1s infinite;
+}
+
+.highlight-green {
+    color: #28a745; /* green */
+    font-weight: bold;
+    animation: blink-animation 1s infinite;
+}
+
+.black-bold {
+    color: black;
+    font-weight: bold;
+}
+
+.title-icon {
+    height: 240px; /* Increased height */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Increased margin */
+}
+
+.section-container {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px;
+}
+
+.section-content {
+    flex: 1;
+}
+
+.modal-hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@keyframes blink-animation {
+    50% {
+        opacity: 0.5;
+    }
 }

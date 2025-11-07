@@ -13,12 +13,6 @@
 <body>
     <header>
         <a href="#" class="site-title">짱교수's 소개</a>
-        <nav>
-            <ul>
-                <li><a href="#">프로필</a></li>
-                <li><a href="#career">포트폴리오</a></li>
-            </ul>
-        </nav>
         <label class="theme-switch">
             <input type="checkbox" id="themeToggle">
             <span class="slider"></span>
@@ -29,18 +23,18 @@
         <div id="about" class="about-container">
             <img src="images/profile.jpg" alt="프로필 사진" class="profile-pic">
             <div class="about-text">
-                <p>이름: 장동현</p>
+                <p><strong>이름 : 장동현</strong></p><p>나이 : 1988년생</p><p>교수설계, 교육콘텐츠 기획/개발, 크리에이터, 프로그래머</p>
             </div>
         </div>
 
         <div class="link-banners-container">
             <div class="link-banner youtube-banner">
-                <a href="https://www.youtube.com/your-channel-url" target="_blank">
+                <a href="https://www.youtube.com/@%EC%A7%B1%EA%B5%90%EC%88%98-w7v" target="_blank">
                     <p><strong>유튜브 채널 보러가기</strong> 🎬</p>
                 </a>
             </div>
             <div class="link-banner blog-banner">
-                <a href="https://your-blog-url.com" target="_blank">
+                <a href="https://camarin-creator.tistory.com/" target="_blank">
                     <p><strong>블로그 보러가기</strong> 📝</p>
                 </a>
             </div>
@@ -48,143 +42,169 @@
 
         <hr class="section-divider">
 
-                <div class="portfolio-grid-container">
+        <div class="portfolio-grid-container">
 
-                    <div id="career" class="portfolio-category-group" data-modal-target="#career-modal">
-
-                        <h3>커리어 (Career)</h3>
-
-                        <div class="portfolio-item">
-
-                            <h4>[회사명/프로젝트명]</h4>
-
-                            <p>이곳에 경력 관련 설명을 작성합니다. 담당했던 역할, 주요 성과 등을 요약하여 기술합니다.</p>
-
-                        </div>
-
-                    </div>
-
-        
-
-                    <div class="portfolio-category-group" data-modal-target="#education-modal">
-
-                        <h3>교육 콘텐츠 (Educational Content)</h3>
-
-                        <div class="portfolio-item">
-
-                            <h4>[강의명/콘텐츠명]</h4>
-
-                            <p>이곳에 제작하거나 참여한 교육 콘텐츠에 대한 설명을 작성합니다.</p>
-
-                        </div>
-
-                    </div>
-
-        
-
-                    <div class="portfolio-category-group" data-modal-target="#other-modal">
-
-                        <h3>기타 콘텐츠 (Other Content)</h3>
-
-                        <div class="portfolio-item">
-
-                            <h4>[콘텐츠명]</h4>
-
-                            <p>이곳에 블로그 포스팅, 외부 기고 등 기타 콘텐츠 관련 설명을 작성합니다.</p>
-
-                        </div>
-
-                    </div>
-
-        
-
-                    <div class="portfolio-category-group" data-modal-target="#programs-modal">
-
-                        <h3>자체 제작 프로그램 (Self-produced Programs)</h3>
-
-                        <div class="portfolio-item">
-
-                            <h4>[프로그램명]</h4>
-
-                            <p>이곳에 직접 제작한 프로그램에 대한 설명을 작성합니다.</p>
-
-                            <a href="#" target="_blank">프로그램 보러가기</a>
-
-                        </div>
-
-                    </div>
-
+            <div class="portfolio-category-group" data-modal-target="#career-modal">
+                <h3>커리어</h3>
+                <div class="image-banner image-banner-career">
+                    <div class="banner-hover-text">커리어<br>보러가기</div>
                 </div>
-
-            </main>
-
-        
-
-            <!-- Modals -->
-
-            <div id="career-modal" class="modal">
-
-                <div class="modal-content">
-
-                    <span class="close-button">&times;</span>
-
-                    <h2>커리어 (Career)</h2>
-
-                    <p>이곳에 커리어에 대한 상세 내용을 작성합니다. 여러 프로젝트 경험, 성과 등을 자세히 기술할 수 있습니다.</p>
-
-                </div>
-
             </div>
 
-        
-
-            <div id="education-modal" class="modal">
-
-                <div class="modal-content">
-
-                    <span class="close-button">&times;</span>
-
-                    <h2>교육 콘텐츠 (Educational Content)</h2>
-
-                    <p>이곳에 교육 콘텐츠에 대한 상세 내용을 작성합니다.</p>
-
+            <div class="portfolio-category-group" data-modal-target="#column-modal">
+                <h3>칼럼</h3>
+                <div class="image-banner image-banner-column">
+                    <div class="banner-hover-text">칼럼<br>보러가기</div>
                 </div>
-
             </div>
 
-        
-
-            <div id="other-modal" class="modal">
-
-                <div class="modal-content">
-
-                    <span class="close-button">&times;</span>
-
-                    <h2>기타 콘텐츠 (Other Content)</h2>
-
-                    <p>이곳에 기타 콘텐츠에 대한 상세 내용을 작성합니다.</p>
-
+            <a href="https://www.youtube.com/playlist?list=PLyOMXPcq0vTTfub9TuMIqaP-IIQxs0NYW" target="_blank" class="portfolio-category-group">
+                <h3>교육콘텐츠(자체제작)</h3>
+                <div class="image-banner image-banner-edu">
+                    <div class="banner-hover-text">교육콘텐츠<br>보러가기</div>
                 </div>
+            </a>
 
+            <div class="portfolio-category-group" data-modal-target="#program-modal">
+                <h3>프로그램(자체제작)</h3>
+                <div class="image-banner image-banner-program">
+                    <div class="banner-hover-text">프로그램<br>보러가기</div>
+                </div>
             </div>
 
-        
-
-            <div id="programs-modal" class="modal">
-
-                <div class="modal-content">
-
-                    <span class="close-button">&times;</span>
-
-                    <h2>자체 제작 프로그램 (Self-produced Programs)</h2>
-
-                    <p>이곳에 자체 제작 프로그램에 대한 상세 내용을 작성합니다.</p>
-
+            <div class="portfolio-category-group" data-modal-target="#webnovel-modal">
+                <h3>웹소설(자체제작)</h3>
+                <div class="image-banner image-banner-webnovel">
+                    <div class="banner-hover-text">웹소설<br>보러가기</div>
                 </div>
-
             </div>
 
-    </body>
+            <div class="portfolio-category-group" data-modal-target="#webtoon-modal">
+                <h3>웹툰(자체제작)</h3>
+                <div class="image-banner image-banner-webtoon">
+                    <div class="banner-hover-text">웹툰<br>보러가기</div>
+                </div>
+            </div>
+
+            <div class="portfolio-category-group" data-modal-target="#animation-modal">
+                <h3>애니메이션(자체제작)</h3>
+                <div class="image-banner image-banner-animation">
+                    <div class="banner-hover-text">애니메이션<br>보러가기</div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Modals -->
+    <div id="career-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="section-container">
+                <img src="images/커리어-1.png" alt="학력" class="title-icon">
+                <div class="section-content">
+                    <h4 class="section-title">학력</h4>
+                    <div class="history-entry">
+                        <div class="history-date">2020. 03 ~ 2022. 08</div>
+                        <div class="history-description"><span class="black-bold">한국방송통신대학교 대학원 에듀테크학 석사</span></div>
+                    </div>
+                    <div class="history-entry">
+                        <div class="history-date">2018. 04 ~ 2018. 08</div>
+                        <div class="history-description">학점은행제 사회복지학과</div>
+                    </div>
+                    <div class="history-entry">
+                        <div class="history-date">2007. 03 ~ 2015. 08</div>
+                        <div class="history-description">단국대학교 부동산학 및 경제학 전공</div>
+                    </div>
+                </div>
+            </div>
+            <hr class="modal-hr">
+            <h4 class="section-title">경력</h4>
+            <div class="history-entry">
+                <div class="history-date">2025. 05 ~ 재직중</div>
+                <div class="history-description">㈜에듀필컨설팅 콘텐츠사업부 과장</div>
+            </div>
+            <hr>
+            <div class="history-entry">
+                <div class="history-date">2024. 12 ~ 2025. 04</div>
+                <div class="history-description">팜러닝 사업개발부 과장</div>
+            </div>
+            <hr>
+            <div class="history-entry">
+                <div class="history-date">2024. 04 ~ 2024. 10</div>
+                <div class="history-description">두잇플래닛 사업운영팀 매니저</div>
+            </div>
+            <hr>
+            <div class="history-entry">
+                <div class="history-date">2023. 03 ~ 2024. 03</div>
+                <div class="history-description">유빅S컴퓨팅 설계팀 과장</div>
+            </div>
+            <hr>
+            <div class="history-entry">
+                <div class="history-date">2020. 12 ~ 2022. 02</div>
+                <div class="history-description">디지털클랜 사업기획본부 팀장</div>
+            </div>
+            <hr>
+            <div class="history-entry">
+                <div class="history-date">2018. 10 ~ 2020. 11</div>
+                <div class="history-description">케이브레인컴퍼니 전략기획실 대리</div>
+            </div>
+            <hr>
+            <div class="history-entry">
+                <div class="history-date">2016. 01 ~ 2016. 06</div>
+                <div class="history-description">거산교육 기획실 과장</div>
+            </div>
+            <hr>
+            <p>- 강사, 원생 관리 / 학원 운영 전반의 각종 데이터 입력 및 관리</p>
+            <p>- 마케팅 및 광고 / 홈페이지 및 SNS 관리 운영</p>
+            <p>- 회의 자료 작성 및 PT / 운영 프로그램 관련 교육</p>
+            <p>- 설명회 기획 및 개최 / 강의 프로모션 기획</p>
+            <p>- 원내 통신 장비 및 시설 관리</p>
+        </div>
+    </div>
+    <div id="column-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>칼럼</h2>
+            <p>이곳에 칼럼에 대한 상세 내용을 작성합니다.</p>
+        </div>
+    </div>
+    <div id="edu-content-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>교육콘텐츠(자체제작)</h2>
+            <p>이곳에 교육콘텐츠에 대한 상세 내용을 작성합니다.</p>
+        </div>
+    </div>
+    <div id="program-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>프로그램(자체제작)</h2>
+            <p>이곳에 프로그램에 대한 상세 내용을 작성합니다.</p>
+        </div>
+    </div>
+    <div id="webnovel-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>웹소설(자체제작)</h2>
+            <p>이곳에 웹소설에 대한 상세 내용을 작성합니다.</p>
+        </div>
+    </div>
+    <div id="webtoon-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>웹툰(자체제작)</h2>
+            <p>이곳에 웹툰에 대한 상세 내용을 작성합니다.</p>
+        </div>
+    </div>
+    <div id="animation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>애니메이션(자체제작)</h2>
+            <p>이곳에 애니메이션에 대한 상세 내용을 작성합니다.</p>
+        </div>
+    </div>
 
     <button id="backToTopBtn" title="Go to top">↑</button>
 
