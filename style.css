@@ -510,6 +510,22 @@ input:checked + .slider:before {
     margin-bottom: 10px;
 }
 
+.title-icon {
+    height: 240px; /* Increased height */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Increased margin */
+}
+
+.section-container {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px;
+}
+
+.section-content {
+    flex: 1;
+}
+
 @keyframes blink-animation {
     50% {
         opacity: 0.5;
