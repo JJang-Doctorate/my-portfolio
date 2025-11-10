@@ -531,3 +531,53 @@ input:checked + .slider:before {
         opacity: 0.5;
     }
 }
+
+/* Program Banners in Modal */
+.program-banners-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0; /* Remove gap, use borders for separation */
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color); /* Add a top border to the container */
+}
+
+.program-banner-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0px 16px 30px; /* Adjust padding for the icon */
+    text-align: left;
+    transition: background-color 0.3s ease;
+    position: relative; /* For the pseudo-element */
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.program-banner-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--border-color); /* Start with a neutral color */
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.program-banner-item:hover {
+    background-color: var(--card-bg-color);
+    transform: none;
+}
+
+.program-banner-item:hover::before {
+    background-color: var(--primary-color); /* Change to primary color on hover */
+}
+
+.program-banner-item h4 {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
+}
