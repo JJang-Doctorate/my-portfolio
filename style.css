@@ -1,3 +1,5 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css');
+
 :root {
     --bg-color: #ffffff;
     --text-color: #333;
@@ -14,7 +16,7 @@
 [data-theme='dark'] {
     --bg-color: #121212;
     --text-color: #e0e0e0;
-    --text-color-light: #a0a0a0;
+    --text-color-light: #888;
     --header-bg-color: #1e1e1e;
     --card-bg-color: #2a2a2a;
     --border-color: #444;
@@ -27,7 +29,7 @@ html {
 }
 
 body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     text-align: center;
@@ -150,6 +152,21 @@ main h3 {
 .image-banner:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    filter: brightness(1.1);
+}
+
+.link-banner:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.portfolio-category-group {
+    cursor: pointer; /* 클릭 가능함을 암시 */
+    transition: transform 0.3s ease;
+}
+
+.portfolio-category-group:hover {
+    transform: scale(1.02);
 }
 
 .image-banner-career {
@@ -301,16 +318,58 @@ a.portfolio-category-group {
 }
 
 .modal-content {
-    background-color: var(--bg-color);
+    background: rgba(255, 255, 255, 0.8); /* More opaque background */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
     margin: 10% auto;
     padding: 40px;
-    border: 1px solid var(--border-color);
     width: 80%;
     max-width: 700px;
-    border-radius: 12px;
+    border-radius: 16px;
     position: relative;
     animation: modalopen 0.5s;
     text-align: left;
+}
+
+[data-theme='dark'] .modal-content {
+    background: rgba(30, 30, 30, 0.8); /* More opaque for dark mode */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#career-modal .modal-content {
+    background: #ffffff; /* White background for career modal */
+    color: #333; /* Ensure text is dark on white background */
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border: 1px solid #ddd;
+}
+
+[data-theme='dark'] #career-modal .modal-content {
+    background: #ffffff; /* Still white in dark mode for career modal */
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* 양쪽으로 정렬 */
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 5px 5px 10px #bebebe,
+                -5px -5px 10px #ffffff;
+}
+
+[data-theme='dark'] header {
+    box-shadow: 5px 5px 10px #0b0b0b,
+                -5px -5px 10px #1d1d1d;
 }
 
 .section-title {
