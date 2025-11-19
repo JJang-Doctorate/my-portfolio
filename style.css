@@ -319,25 +319,23 @@ a.portfolio-category-group {
 }
 
 .modal-content {
-    background: rgba(255, 255, 255, 0.8); /* More opaque background */
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
     color: var(--text-color);
     margin: 10% auto;
     padding: 40px;
+    border: 1px solid #888;
     width: 80%;
     max-width: 700px;
     border-radius: 16px;
     position: relative;
     animation: modalopen 0.5s;
     text-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 [data-theme='dark'] .modal-content {
-    background: rgba(30, 30, 30, 0.8); /* More opaque for dark mode */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #2a2a2a;
+    border: 1px solid #555;
 }
 
 #career-modal .modal-content {
@@ -352,6 +350,11 @@ a.portfolio-category-group {
     background: #ffffff; /* Still white in dark mode for career modal */
     color: #333;
     border: 1px solid #ddd;
+}
+
+[data-theme='dark'] header {
+    box-shadow: 5px 5px 10px #0b0b0b,
+                -5px -5px 10px #1d1d1d;
 }
 
 .section-title {
@@ -621,4 +624,16 @@ input:checked + .slider:before {
     margin: 0;
     font-size: 1em;
     font-weight: 500;
+}
+
+/* Scroll Animation */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
