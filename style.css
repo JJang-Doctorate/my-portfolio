@@ -43,17 +43,18 @@ header {
     background-color: var(--header-bg-color);
     padding: 20px 40px;
     border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
     z-index: 100;
+    box-shadow: 5px 5px 10px #bebebe,
+                -5px -5px 10px #ffffff;
 }
 
 .site-title {
-    font-size: 1.8em;
+    font-size: 2.2em; /* Increased size */
     font-weight: bold;
     color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
 .site-title:hover {
     color: var(--primary-color);
@@ -237,7 +238,7 @@ main h3 {
 }
 
 /* --- 스크롤 위치 조정 --- */
-#about, #career { scroll-margin-top: 100px; }
+#about, #career { }
 
 /* --- 스크롤 위치 조정 --- */
 
@@ -351,25 +352,6 @@ a.portfolio-category-group {
     background: #ffffff; /* Still white in dark mode for career modal */
     color: #333;
     border: 1px solid #ddd;
-}
-
-header {
-    display: flex;
-    justify-content: space-between; /* 양쪽으로 정렬 */
-    align-items: center;
-    background-color: var(--bg-color);
-    padding: 20px 40px;
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 5px 5px 10px #bebebe,
-                -5px -5px 10px #ffffff;
-}
-
-[data-theme='dark'] header {
-    box-shadow: 5px 5px 10px #0b0b0b,
-                -5px -5px 10px #1d1d1d;
 }
 
 .section-title {
