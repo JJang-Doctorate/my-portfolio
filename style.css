@@ -331,8 +331,6 @@ a.portfolio-category-group {
 
 /* Modal Styles */
 .modal {
-    display: none;
-    /* Hidden by default */
     position: fixed;
     /* Stay in place */
     z-index: 101;
@@ -345,6 +343,9 @@ a.portfolio-category-group {
     /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.6);
     /* Black w/ opacity */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .modal-content {
@@ -628,32 +629,28 @@ input:checked+.slider:before {
     }
 }
 
-/* Program Banners in Modal */
-.program-banners-container {
+/* Program Banners in Modal - Scoped to each modal */
+
+/* #column-modal */
+#column-modal .program-banners-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
-    /* Remove gap, use borders for separation */
     margin-top: 20px;
     border-top: 1px solid var(--border-color);
-    /* Add a top border to the container */
 }
-
-.program-banner-item {
+#column-modal .program-banner-item {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid var(--border-color);
     padding: 16px 0px 16px 30px;
-    /* Adjust padding for the icon */
     text-align: left;
     transition: background-color 0.3s ease;
     position: relative;
-    /* For the pseudo-element */
     box-shadow: none;
     border-radius: 0;
 }
-
-.program-banner-item::before {
+#column-modal .program-banner-item::before {
     content: '';
     position: absolute;
     left: 10px;
@@ -662,22 +659,242 @@ input:checked+.slider:before {
     width: 6px;
     height: 6px;
     background-color: var(--border-color);
-    /* Start with a neutral color */
     border-radius: 50%;
     transition: background-color 0.3s ease;
 }
-
-.program-banner-item:hover {
+#column-modal .program-banner-item:hover {
     background-color: var(--card-bg-color);
     transform: none;
 }
-
-.program-banner-item:hover::before {
+#column-modal .program-banner-item:hover::before {
     background-color: var(--primary-color);
-    /* Change to primary color on hover */
+}
+#column-modal .program-banner-item h4 {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
 }
 
-.program-banner-item h4 {
+/* #edu-content-modal */
+#edu-content-modal .program-banners-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+#edu-content-modal .program-banner-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0px 16px 30px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    position: relative;
+    box-shadow: none;
+    border-radius: 0;
+}
+#edu-content-modal .program-banner-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+#edu-content-modal .program-banner-item:hover {
+    background-color: var(--card-bg-color);
+    transform: none;
+}
+#edu-content-modal .program-banner-item:hover::before {
+    background-color: var(--primary-color);
+}
+#edu-content-modal .program-banner-item h4 {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* #program-modal */
+#program-modal .program-banners-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+#program-modal .program-banner-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0px 16px 30px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    position: relative;
+    box-shadow: none;
+    border-radius: 0;
+}
+#program-modal .program-banner-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+#program-modal .program-banner-item:hover {
+    background-color: var(--card-bg-color);
+    transform: none;
+}
+#program-modal .program-banner-item:hover::before {
+    background-color: var(--primary-color);
+}
+#program-modal .program-banner-item h4 {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* #webnovel-modal */
+#webnovel-modal .program-banners-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+#webnovel-modal .program-banner-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0px 16px 30px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    position: relative;
+    box-shadow: none;
+    border-radius: 0;
+}
+#webnovel-modal .program-banner-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+#webnovel-modal .program-banner-item:hover {
+    background-color: var(--card-bg-color);
+    transform: none;
+}
+#webnovel-modal .program-banner-item:hover::before {
+    background-color: var(--primary-color);
+}
+#webnovel-modal .program-banner-item h4 {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* #webtoon-modal */
+#webtoon-modal .program-banners-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+#webtoon-modal .program-banner-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0px 16px 30px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    position: relative;
+    box-shadow: none;
+    border-radius: 0;
+}
+#webtoon-modal .program-banner-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+#webtoon-modal .program-banner-item:hover {
+    background-color: var(--card-bg-color);
+    transform: none;
+}
+#webtoon-modal .program-banner-item:hover::before {
+    background-color: var(--primary-color);
+}
+#webtoon-modal .program-banner-item h4 {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* #animation-modal */
+#animation-modal .program-banners-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+#animation-modal .program-banner-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0px 16px 30px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    position: relative;
+    box-shadow: none;
+    border-radius: 0;
+}
+#animation-modal .program-banner-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+#animation-modal .program-banner-item:hover {
+    background-color: var(--card-bg-color);
+    transform: none;
+}
+#animation-modal .program-banner-item:hover::before {
+    background-color: var(--primary-color);
+}
+#animation-modal .program-banner-item h4 {
     color: var(--text-color);
     margin: 0;
     font-size: 1em;
@@ -951,4 +1168,39 @@ input:checked+.slider:before {
 .fade-in-section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+/* Modal Animation & Glow Effects from 참고.html */
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+.modal.active .modal-content {
+    transform: scale(1);
+}
+.text-shadow { text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+.text-glow-success {
+    color: #34d399;
+    text-shadow: 0 0 10px rgba(52, 211, 153, 0.6);
+    font-weight: 700;
+}
+.text-glow-info {
+    color: #60a5fa;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
+    font-weight: 700;
+}
+.text-glow-gold {
+    color: #fbbf24;
+    text-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+    font-weight: 700;
+}
+
+/* Fix for visited links in dark modals */
+#modal-column a:visited span,
+#modal-edu a:visited h4,
+#modal-program a:visited h4 {
+    color: #e2e8f0; /* a light slate color from 참고.html body */
 }

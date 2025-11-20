@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Tailwind CSS (디자인 도구) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 폰트 (Pretendard/Noto Sans) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -49,49 +53,49 @@
 
         <div class="portfolio-grid-container fade-in-section">
 
-            <div class="portfolio-category-group" data-modal-target="#career-modal">
+            <div class="portfolio-category-group" onclick="openModal('modal-career')">
                 <h3>커리어</h3>
                 <div class="image-banner image-banner-career">
                     <div class="banner-hover-text">커리어<br>보러가기</div>
                 </div>
             </div>
 
-            <div class="portfolio-category-group" data-modal-target="#column-modal">
+            <div class="portfolio-category-group" onclick="openModal('modal-column')">
                 <h3>칼럼</h3>
                 <div class="image-banner image-banner-column">
                     <div class="banner-hover-text">칼럼<br>보러가기</div>
                 </div>
             </div>
 
-            <div class="portfolio-category-group" data-modal-target="#edu-content-modal">
+            <div class="portfolio-category-group" onclick="openModal('modal-edu')">
                 <h3>교육콘텐츠(자체제작)</h3>
                 <div class="image-banner image-banner-edu">
                     <div class="banner-hover-text">교육콘텐츠<br>보러가기</div>
                 </div>
             </div>
 
-            <div class="portfolio-category-group" data-modal-target="#program-modal">
+            <div class="portfolio-category-group" onclick="openModal('modal-program')">
                 <h3>프로그램(자체제작)</h3>
                 <div class="image-banner image-banner-program">
                     <div class="banner-hover-text">프로그램<br>보러가기</div>
                 </div>
             </div>
 
-            <div class="portfolio-category-group" data-modal-target="#webnovel-modal">
+            <div class="portfolio-category-group" onclick="openModal('webnovel-modal')">
                 <h3>웹소설(자체제작)</h3>
                 <div class="image-banner image-banner-webnovel">
                     <div class="banner-hover-text">웹소설<br>보러가기</div>
                 </div>
             </div>
 
-            <div class="portfolio-category-group" data-modal-target="#webtoon-modal">
+            <div class="portfolio-category-group" onclick="openModal('webtoon-modal')">
                 <h3>웹툰(자체제작)</h3>
                 <div class="image-banner image-banner-webtoon">
                     <div class="banner-hover-text">웹툰<br>보러가기</div>
                 </div>
             </div>
 
-            <div class="portfolio-category-group" data-modal-target="#animation-modal">
+            <div class="portfolio-category-group" onclick="openModal('animation-modal')">
                 <h3>애니메이션(자체제작)</h3>
                 <div class="image-banner image-banner-animation">
                     <div class="banner-hover-text">애니메이션<br>보러가기</div>
@@ -102,233 +106,302 @@
 
     </main>
 
-    <!-- Modals -->
-    <div id="career-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <img src="images/커리어-1.png" alt="Career Icon" class="modal-top-right-image">
-
-            <div class="modern-modal-header">
-                <div class="header-icon">🎓</div>
-                <h2>커리어 히스토리</h2>
+    <!-- 1. 커리어 모달 (텍스트 100% 복구 + 강조 효과) -->
+    <div id="modal-career" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" onclick="if(event.target === this) closeModal('modal-career')">
+        <div class="modal-content bg-slate-900 w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl shadow-2xl border border-slate-700 relative">
+            <div class="bg-slate-900/95 backdrop-blur border-b border-slate-700 p-4 flex justify-between items-center z-10">
+                <h2 class="text-xl font-bold text-white flex items-center"><i class="fa-solid fa-briefcase mr-2 text-blue-500"></i> 학력 및 경력</h2>
+                <button onclick="closeModal('modal-career')" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 flex items-center justify-center transition"><i class="fa-solid fa-xmark"></i></button>
             </div>
-
-            <div class="timeline-container">
-
-                <!-- Education Section -->
-                <div class="timeline-section-label">학력</div>
-
-                <div class="timeline-item education-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">2020. 03 ~ 2022. 08</span>
-                    <h4 class="timeline-title">한국방송통신대학교 대학원</h4>
-                    <p class="timeline-desc"><span class="black-bold">에듀테크학 석사</span></p>
-                </div>
-
-                <div class="timeline-item education-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">2018. 04 ~ 2018. 08</span>
-                    <h4 class="timeline-title">학점은행제</h4>
-                    <p class="timeline-desc">사회복지학과</p>
-                </div>
-
-                <div class="timeline-item education-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">2007. 03 ~ 2015. 08</span>
-                    <h4 class="timeline-title">단국대학교</h4>
-                    <p class="timeline-desc">부동산학 및 경제학 전공</p>
-                </div>
-
-                <!-- Experience Section -->
-                <div class="timeline-section-label" style="margin-top: 20px;">경력</div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">2025. 05 ~ 재직중</span>
-                    <h4 class="timeline-title">㈜에듀필컨설팅</h4>
-                    <p class="timeline-desc">콘텐츠사업부 과장</p>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">2024. 12 ~ 2025. 04</span>
-                    <h4 class="timeline-title">팜러닝</h4>
-                    <p class="timeline-desc">사업개발부 과장</p>
-                    <div class="timeline-desc"
-                        style="margin-top: 10px; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 8px;">
-                        <p>□ PL</p>
-                        <p>ㆍ 사업명 : 농림수산식품교육문화정보원 - 2024년 농업e지(디지털전환) 전략기획교육운영</p>
-                        <p>ㆍ 사업금액 : 1,078,330,000원</p>
-                        <p>ㆍ 사업기간 : 2024.11.04 ~ 2025.04.30</p>
+            <div class="p-6 space-y-10">
+                
+                <!-- 학력 섹션 -->
+                <section>
+                    <h3 class="text-base text-blue-400 font-bold uppercase mb-4 flex items-center"><i class="fa-solid fa-graduation-cap mr-2"></i> 학력</h3>
+                    <div class="space-y-4 border-l-2 border-slate-700 ml-2 pl-6 relative">
+                        <div class="relative">
+                            <div class="w-3 h-3 bg-slate-500 rounded-full absolute -left-[31px] top-1.5 border-2 border-slate-900"></div>
+                            <h4 class="text-white font-bold text-lg">한국방송통신대학교 대학원 에듀테크학 석사</h4>
+                            <p class="text-slate-500 text-sm">2020. 03 ~ 2022. 08</p>
+                        </div>
+                        <div class="relative">
+                            <div class="w-3 h-3 bg-slate-600 rounded-full absolute -left-[31px] top-1.5 border-2 border-slate-900"></div>
+                            <h4 class="text-slate-300 font-medium">학점은행제 사회복지학과</h4>
+                            <p class="text-slate-500 text-sm">2018. 04 ~ 2018. 08</p>
+                        </div>
+                        <div class="relative">
+                            <div class="w-3 h-3 bg-slate-600 rounded-full absolute -left-[31px] top-1.5 border-2 border-slate-900"></div>
+                            <h4 class="text-slate-300 font-medium">단국대학교 부동산학 및 경제학 전공</h4>
+                            <p class="text-slate-500 text-sm">2007. 03 ~ 2015. 08</p>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">2024. 04 ~ 2024. 10</span>
-                    <h4 class="timeline-title">두잇플래닛</h4>
-                    <p class="timeline-desc">사업운영팀 매니저</p>
-                    <div class="timeline-desc"
-                        style="margin-top: 10px; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 8px;">
-                        <p>□ 입찰 및 제안서 작성, 제안 PT</p>
-                        <p><span class="highlight-green">ㆍ경기도 남양주시 - 2024년도 보존서고 기록물 정리 용역 (수주)</span></p>
-                        <p>ㆍ 사업금액 : 81,810,000원</p>
-                        <br>
-                        <p>□ PM</p>
-                        <p>ㆍ한국교육과정평가원 - PISA 2025 예비검사 학부모 설문지 스캔 및 자료 입력 용역</p>
-                        <p>ㆍ국립환경과학원 - 문서전자화 및 데이터 구축 용역</p>
+                <!-- 경력 섹션 -->
+                <section>
+                    <h3 class="text-base text-emerald-400 font-bold uppercase mb-4 flex items-center"><i class="fa-solid fa-building mr-2"></i> 경력</h3>
+                    
+                    <div class="space-y-8">
+                        <!-- 1. 에듀필컨설팅 -->
+                        <article class="bg-slate-800/40 p-5 rounded-2xl border border-slate-700 hover:border-emerald-500/30 transition">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
+                                <div>
+                                    <h4 class="text-xl font-bold text-emerald-400">㈜에듀필컨설팅</h4>
+                                    <p class="text-white font-medium">콘텐츠사업부 과장</p>
+                                </div>
+                                <span class="inline-block bg-emerald-500/10 text-emerald-400 text-xs px-3 py-1 rounded-full mt-2 sm:mt-0 border border-emerald-500/20">2025. 05 ~ 재직중</span>
+                            </div>
+                        </article>
+
+                        <!-- 2. 팜러닝 -->
+                        <article class="bg-slate-800/40 p-5 rounded-2xl border border-slate-700 hover:border-blue-500/30 transition">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+                                <div>
+                                    <h4 class="text-xl font-bold text-white">팜러닝</h4>
+                                    <p class="text-slate-300 font-medium">사업개발부 과장</p>
+                                </div>
+                                <span class="inline-block bg-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">2024. 12 ~ 2025. 04</span>
+                            </div>
+                            <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                <p class="text-sm text-slate-400 mb-2 font-bold border-b border-slate-700 pb-1">□ <span class="text-glow-info">PL</span></p>
+                                <ul class="text-sm text-slate-300 space-y-2 list-none">
+                                    <li>ㆍ 사업명 : 농림수산식품교육문화정보원 - 2024년 농업e지(디지털전환) 전략기획교육운영</li>
+                                    <li>ㆍ 사업금액 : <span class="text-glow-gold">1,078,330,000원</span></li>
+                                    <li>ㆍ 사업기간 : 2024.11.04 ~ 2025.04.30</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- 3. 두잇플래닛 -->
+                        <article class="bg-slate-800/40 p-5 rounded-2xl border border-slate-700 hover:border-blue-500/30 transition">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+                                <div>
+                                    <h4 class="text-xl font-bold text-white">두잇플래닛</h4>
+                                    <p class="text-slate-300 font-medium">사업운영팀 매니저</p>
+                                </div>
+                                <span class="inline-block bg-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">2024. 04 ~ 2024. 10</span>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                    <p class="text-sm text-slate-400 mb-2 font-bold border-b border-slate-700 pb-1">□ 입찰 및 제안서 작성, 제안 PT</p>
+                                    <ul class="text-sm text-slate-300 space-y-2 list-none">
+                                        <li class="text-glow-success">ㆍ경기도 남양주시 - 2024년도 보존서고 기록물 정리 용역 (수주)</li>
+                                        <li>ㆍ 사업금액 : <span class="text-glow-gold">81,810,000원</span></li>
+                                    </ul>
+                                </div>
+                                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                    <p class="text-sm text-slate-400 mb-2 font-bold border-b border-slate-700 pb-1">□ <span class="text-glow-info">PM</span></p>
+                                    <ul class="text-sm text-slate-300 space-y-2 list-none">
+                                        <li>ㆍ한국교육과정평가원 - PISA 2025 예비검사 학부모 설문지 스캔 및 자료 입력 용역</li>
+                                        <li>ㆍ국립환경과학원 - 문서전자화 및 데이터 구축 용역</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- 4. 유빅스컴퓨팅 -->
+                        <article class="bg-slate-800/40 p-5 rounded-2xl border border-slate-700 hover:border-blue-500/30 transition">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+                                <div>
+                                    <h4 class="text-xl font-bold text-white">유빅스컴퓨팅</h4>
+                                    <p class="text-slate-300 font-medium">설계팀 과장</p>
+                                </div>
+                                <span class="inline-block bg-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">2023. 03 ~ 2024. 03</span>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                    <p class="text-sm text-slate-400 mb-2 font-bold border-b border-slate-700 pb-1">
+                                        □ 입찰 및 제안서 작성, 제안 PT
+                                    </p>
+                                    <ul class="text-sm text-slate-300 space-y-2 list-none">
+                                        <li class="text-glow-success">ㆍ건국대학교 - [혁신사업] 알찬 교수법 워크숍 사업 온라인 교육 콘텐츠 개발 (수주)</li>
+                                        <li class="text-glow-success">ㆍ한국과학창의재단 - 2023년 지능형 과학실 ON 연계 공동탐구 콘텐츠 개발 용역 (수주)</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                    <div class="mb-4">
+                                        <p class="text-sm text-slate-400 mb-2 font-bold border-b border-slate-700 pb-1">□ <span class="text-glow-info">PM(구성사)</span> : 한국기술교육대학교</p>
+                                        <ul class="text-sm text-slate-300 space-y-1 list-none">
+                                            <li class="text-glow-info">ㆍ 사업명 : 2023년도 이러닝 콘텐츠 개발(평생직업능력개발 1차)</li>
+                                            <li>ㆍ 사업금액 : <span class="text-glow-gold">1,395,000,000원</span></li>
+                                            <li>ㆍ 사업기간 : 2023.07.03 ~ 2024.01.29</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-slate-400 mb-2 font-bold border-b border-slate-700 pb-1">□ <span class="text-glow-info">PM</span> : 한국과학창의재단</p>
+                                        <ul class="text-sm text-slate-300 space-y-1 list-none">
+                                            <li>ㆍ 사업명 : 2023년 지능형 과학실 ON 연계 공동탐구 콘텐츠 개발 용역</li>
+                                            <li>ㆍ 사업금액 : <span class="text-glow-gold">93,000,000원</span></li>
+                                            <li>ㆍ 사업기간 : 2023.07.27 ~ 2024.03.16</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- 5. 디지털클랜 -->
+                        <article class="bg-slate-800/40 p-5 rounded-2xl border border-slate-700 hover:border-blue-500/30 transition">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+                                <div>
+                                    <h4 class="text-xl font-bold text-white">디지털클랜</h4>
+                                    <p class="text-slate-300 font-medium">사업기획본부 팀장</p>
+                                </div>
+                                <span class="inline-block bg-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">2020. 12 ~ 2022. 02</span>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                    <p class="text-sm text-slate-400 mb-2 font-bold border-b border-slate-700 pb-1">
+                                        □ 입찰 및 제안서 작성, 제안 PT
+                                    </p>
+                                    <ul class="text-sm space-y-1 list-none">
+                                        <li class="text-glow-success">ㆍ질병관리청 국립보건연구원 - 국립중앙인체자원은행 온라인 교육 콘텐츠 개발 (수주)</li>
+                                        <li class="text-glow-success">ㆍ한국청소년활동진흥원 - 2021년 이러닝 안전교육 콘텐츠 개발 (수주)</li>
+                                        <li class="text-glow-success">ㆍ한국청소년활동진흥원 - 청소년지도사 자격연수 이러닝 콘텐츠 운영사업 수행 용역 (수주)</li>
+                                        <li class="text-glow-success">ㆍ한국교육학술정보원 - 교육부 정보보호 교육센터 정보보안 콘텐츠 제작 (수주)</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                    <p class="text-sm text-slate-400 mb-2 font-bold border-b border-slate-700 pb-1">□ 사업 <span class="text-glow-info">PM / PL</span> 수행</p>
+                                    <ul class="text-sm text-slate-300 space-y-1 list-none">
+                                        <li>ㆍ질병관리청 국립보건연구원 - 국립중앙인체자원은행 온라인 교육 콘텐츠 개발 (PM)</li>
+                                        <li>ㆍ베스티안재단 - 화상 안전 교육(응용) (PM)</li>
+                                        <li>ㆍ한국교통안전공단 - 2021년 교통문화지수 실태조사 온라인 강의 영상 제작 (PM)</li>
+                                        <li>ㆍ한국청소년활동진흥원 - 2021년 이러닝 안전교육 콘텐츠 개발 (PM)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- 6. 케이브레인컴퍼니 -->
+                        <article class="bg-slate-800/40 p-5 rounded-2xl border border-slate-700 hover:border-blue-500/30 transition">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+                                <div>
+                                    <h4 class="text-xl font-bold text-white">케이브레인컴퍼니</h4>
+                                    <p class="text-slate-300 font-medium">전략기획실 대리</p>
+                                </div>
+                                <span class="inline-block bg-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">2018. 10 ~ 2020. 11</span>
+                            </div>
+                            <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                <ul class="text-sm text-slate-300 space-y-1 list-none">
+                                    <li>- 창업진흥원 - 창업선도대학 졸업기업 마케팅지원 위탁용역 (PM)</li>
+                                    <li>- RFP 분석 및 제안서(정량) 작성 및 제안서(정성) 작성 지원</li>
+                                    <li>- 입찰 및 나라장터 관련 업무</li>
+                                    <li>- 착수, 잔금 수령 등 관련 행정 업무</li>
+                                    <li>- 교수설계 및 스토리보드 작성</li>
+                                    <li>- CP관리</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- 7. 거산교육 -->
+                        <article class="bg-slate-800/40 p-5 rounded-2xl border border-slate-700 hover:border-blue-500/30 transition">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+                                <div>
+                                    <h4 class="text-xl font-bold text-white">거산교육</h4>
+                                    <p class="text-slate-300 font-medium">기획실 과장</p>
+                                </div>
+                                <span class="inline-block bg-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">2016. 01 ~ 2016. 06</span>
+                            </div>
+                            <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                <ul class="text-sm text-slate-300 space-y-1 list-none">
+                                    <li>- 강사, 원생 관리 / 학원 운영 전반의 각종 데이터 입력 및 관리</li>
+                                    <li>- 마케팅 및 광고 / 홈페이지 및 SNS 관리 운영</li>
+                                    <li>- 회의 자료 작성 및 PT / 운영 프로그램 관련 교육</li>
+                                    <li>- 설명회 기획 및 개최 / 강의 프로모션 기획</li>
+                                    <li>- 원내 통신 장비 및 시설 관리</li>
+                                </ul>
+                            </div>
+                        </article>
+
                     </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">2023. 03 ~ 2024. 03</span>
-                    <h4 class="timeline-title">유빅스컴퓨팅</h4>
-                    <p class="timeline-desc">설계팀 과장</p>
-                    <div class="timeline-desc"
-                        style="margin-top: 10px; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 8px;">
-                        <p>□ 입찰 및 제안서 작성, 제안 PT</p>
-                        <p><span class="highlight-green">ㆍ건국대학교 - [혁신사업] 알찬 교수법 워크숍 사업 온라인 교육 콘텐츠 개발 (수주)</span></p>
-                        <p><span class="highlight-green">ㆍ한국과학창의재단 - 2023년 지능형 과학실 ON 연계 공동탐구 콘텐츠 개발 용역 (수주)</span></p>
-                        <br>
-                        <p><span class="highlight-text">□ PM(구성사) : 한국기술교육대학교</span></p>
-                        <p>ㆍ <span class="highlight-text">사업명 : 2023년도 이러닝 콘텐츠 개발(평생직업능력개발 1차)</span></p>
-                        <p>ㆍ 사업금액 : 1,395,000,000원</p>
-                        <p>ㆍ 사업기간 : 2023.07.03 ~ 2024.01.29</p>
-                        <br>
-                        <p>□ PM : 한국과학창의재단</p>
-                        <p>ㆍ 사업명 : 2023년 지능형 과학실 ON 연계 공동탐구 콘텐츠 개발 용역</p>
-                        <p>ㆍ 사업금액 : 93,000,000원</p>
-                        <p>ㆍ 사업기간 : 2023.07.27 ~ 2024.03.16</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">2020. 12 ~ 2022. 02</span>
-                    <h4 class="timeline-title">디지털클랜</h4>
-                    <p class="timeline-desc">사업기획본부 팀장</p>
-                    <div class="timeline-desc"
-                        style="margin-top: 10px; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 8px;">
-                        <p>□ 입찰 및 제안서 작성, 제안 PT</p>
-                        <p><span class="highlight-green">ㆍ질병관리청 국립보건연구원 - 국립중앙인체자원은행 온라인 교육 콘텐츠 개발 (수주)</span></p>
-                        <p><span class="highlight-green">ㆍ한국청소년활동진흥원 - 2021년 이러닝 안전교육 콘텐츠 개발 (수주)</span></p>
-                        <p><span class="highlight-green">ㆍ한국청소년활동진흥원 - 청소년지도사 자격연수 이러닝 콘텐츠 운영사업 수행 용역 (수주)</span></p>
-                        <p><span class="highlight-green">ㆍ한국교육학술정보원 - 교육부 정보보호 교육센터 정보보안 콘텐츠 제작 (수주)</span></p>
-                        <br>
-                        <p>□ 사업 PM / PL 수행</p>
-                        <p>ㆍ질병관리청 국립보건연구원 - 국립중앙인체자원은행 온라인 교육 콘텐츠 개발 (PM)</p>
-                        <p>ㆍ베스티안재단 - 화상 안전 교육(응용) (PM)</p>
-                        <p>ㆍ한국교통안전공단 - 2021년 교통문화지수 실태조사 온라인 강의 영상 제작 (PM)</p>
-                        <p>ㆍ한국청소년활동진흥원 - 2021년 이러닝 안전교육 콘텐츠 개발 (PM</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">2018. 10 ~ 2020. 11</span>
-                    <h4 class="timeline-title">케이브레인컴퍼니</h4>
-                    <p class="timeline-desc">전략기획실 대리</p>
-                    <div class="timeline-desc"
-                        style="margin-top: 10px; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 8px;">
-                        <p>- 창업진흥원 - 창업선도대학 졸업기업 마케팅지원 위탁용역 (PM)</p>
-                        <p>- RFP 분석 및 제안서(정량) 작성 및 제안서(정성) 작성 지원</p>
-                        <p>- 입찰 및 나라장터 관련 업무</p>
-                        <p>- 착수, 잔금 수령 등 관련 행정 업무</p>
-                        <p>- 교수설계 및 스토리보드 작성</p>
-                        <p>- CP관리</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">2016. 01 ~ 2016. 06</span>
-                    <h4 class="timeline-title">거산교육</h4>
-                    <p class="timeline-desc">기획실 과장</p>
-                    <div class="timeline-desc"
-                        style="margin-top: 10px; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 8px;">
-                        <p>- 강사, 원생 관리 / 학원 운영 전반의 각종 데이터 입력 및 관리</p>
-                        <p>- 마케팅 및 광고 / 홈페이지 및 SNS 관리 운영</p>
-                        <p>- 회의 자료 작성 및 PT / 운영 프로그램 관련 교육</p>
-                        <p>- 설명회 기획 및 개최 / 강의 프로모션 기획</p>
-                        <p>- 원내 통신 장비 및 시설 관리</p>
-                    </div>
-                </div>
-
+                </section>
             </div>
         </div>
     </div>
 
-    <div id="column-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>칼럼</h2>
-            <div class="program-banners-container">
-                <div class="program-banner-item">
-                    <a href="https://camarin-creator.tistory.com/category/Head%20to%20%EC%98%81%ED%8F%AC%ED%8B%B0"
-                        target="_blank">
-                        <h4>Head to 영포티</h4>
-                    </a>
+    <!-- 2. 칼럼 모달 -->
+    <div id="modal-column" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" onclick="if(event.target === this) closeModal('modal-column')">
+        <div class="modal-content bg-slate-900 w-full max-w-md rounded-2xl shadow-2xl border border-slate-700">
+            <div class="p-4 border-b border-slate-700 flex justify-between items-center">
+                <h2 class="text-lg font-bold text-white">칼럼</h2>
+                <button onclick="closeModal('modal-column')" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-4 space-y-2">
+                <a href="https://camarin-creator.tistory.com/category/Head%20to%20%EC%98%81%ED%8F%AC%ED%8B%B0" target="_blank" class="block p-3 bg-slate-800 rounded-lg hover:bg-slate-700 transition flex justify-between items-center">
+                    <span>Head to 영포티</span> <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                </a>
+                <a href="https://camarin-creator.tistory.com/category/%EA%B5%90%EC%9C%A1%20%EC%9D%B4%EC%95%BC%EA%B8%B0" target="_blank" class="block p-3 bg-slate-800 rounded-lg hover:bg-slate-700 transition flex justify-between items-center">
+                    <span>교육 이야기</span> <i class="fa-solid fa-arrow-up-right-from-square text-slate-500"></i>
+                </a>
+                <div class="block p-3 bg-slate-800/50 rounded-lg text-slate-400 flex justify-between items-center">
+                    <span>도서 이야기</span> <span class="text-xs bg-slate-700 px-2 py-0.5 rounded">준비중</span>
                 </div>
-                <div class="program-banner-item">
-                    <a href="https://camarin-creator.tistory.com/category/%EA%B5%90%EC%9C%A1%20%EC%9D%B4%EC%95%BC%EA%B8%B0"
-                        target="_blank">
-                        <h4>교육 이야기</h4>
-                    </a>
+                <div class="block p-3 bg-slate-800/50 rounded-lg text-slate-400 flex justify-between items-center">
+                    <span>게임 이야기</span> <span class="text-xs bg-slate-700 px-2 py-0.5 rounded">준비중</span>
                 </div>
-                <div class="program-banner-item">
-                    <h4>도서 이야기</h4>
-                </div>
-                <div class="program-banner-item">
-                    <h4>게임 이야기</h4>
-                </div>
-                <div class="program-banner-item">
-                    <h4>만화 이야기</h4>
+                <div class="block p-3 bg-slate-800/50 rounded-lg text-slate-400 flex justify-between items-center">
+                    <span>만화 이야기</span> <span class="text-xs bg-slate-700 px-2 py-0.5 rounded">준비중</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="edu-content-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>교육콘텐츠(자체제작)</h2>
-            <div class="program-banners-container">
-                <div class="program-banner-item">
-                    <a href="https://www.youtube.com/playlist?list=PLyOMXPcq0vTRC2BWI_i1nfOgDzDHqYkfW" target="_blank">
-                        <h4>문학과 철학</h4>
-                    </a>
-                </div>
-                <div class="program-banner-item">
-                    <a href="https://www.youtube.com/playlist?list=PLyOMXPcq0vTTfub9TuMIqaP-IIQxs0NYW" target="_blank">
-                        <h4>교수설계자를 위한 AI 활용법</h4>
-                    </a>
-                </div>
+    <!-- 3. 교육 콘텐츠 모달 -->
+    <div id="modal-edu" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" onclick="if(event.target === this) closeModal('modal-edu')">
+        <div class="modal-content bg-slate-900 w-full max-w-md rounded-2xl shadow-2xl border border-slate-700">
+            <div class="p-4 border-b border-slate-700 flex justify-between items-center">
+                <h2 class="text-lg font-bold text-white">교육콘텐츠(자체제작)</h2>
+                <button onclick="closeModal('modal-edu')" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-4 space-y-3">
+                <a href="https://www.youtube.com/playlist?list=PLyOMXPcq0vTRC2BWI_i1nfOgDzDHqYkfW" target="_blank" class="flex items-center p-3 bg-slate-800 rounded-lg hover:bg-slate-700 transition group">
+                    <div class="w-12 h-8 bg-red-600 rounded flex items-center justify-center text-white mr-3 group-hover:scale-105 transition"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-sm">문학과 철학</h4>
+                        <p class="text-xs text-slate-400">재생목록 바로가기</p>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/playlist?list=PLyOMXPcq0vTTfub9TuMIqaP-IIQxs0NYW" target="_blank" class="flex items-center p-3 bg-slate-800 rounded-lg hover:bg-slate-700 transition group">
+                    <div class="w-12 h-8 bg-red-600 rounded flex items-center justify-center text-white mr-3 group-hover:scale-105 transition"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-sm">교수설계자를 위한 AI 활용법</h4>
+                        <p class="text-xs text-slate-400">재생목록 바로가기</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 
-    <div id="program-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>프로그램(자체제작)</h2>
-            <div class="program-banners-container">
-                <div class="program-banner-item">
-                    <a href="https://github.com/JJang-Doctorate/bid_analyzer-e-learning-" target="_blank">
-                        <h4>나라장터 입찰결과 분석기(이러닝 사업/업체)</h4>
-                    </a>
-                </div>
-                <div class="program-banner-item">
-                    <h4>나라장터 가격투찰 프로그램</h4>
-                </div>
-                <div class="program-banner-item">
-                    <h4>원고 → 스토리보드 변환기</h4>
-                </div>
-                <div class="program-banner-item">
-                    <h4>스토리보드 내 텍스트, 스크립트 추출기</h4>
-                </div>
-                <div class="program-banner-item">
-                    <h4>게티이미지 자동 다운로드 프로그램</h4>
+    <!-- 4. 프로그램 모달 -->
+    <div id="modal-program" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" onclick="if(event.target === this) closeModal('modal-program')">
+        <div class="modal-content bg-slate-900 w-full max-w-md rounded-2xl shadow-2xl border border-slate-700">
+            <div class="p-4 border-b border-slate-700 flex justify-between items-center">
+                <h2 class="text-lg font-bold text-white">프로그램(자체제작)</h2>
+                <button onclick="closeModal('modal-program')" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-4 space-y-3">
+                <a href="https://github.com/JJang-Doctorate/bid_analyzer-e-learning-" target="_blank" class="block p-4 bg-slate-800 rounded-xl border border-slate-700 hover:border-emerald-500 transition group">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-emerald-400 font-bold text-sm"><i class="fa-brands fa-python mr-1"></i> Python</span>
+                        <i class="fa-brands fa-github text-slate-400 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-bold mb-1">나라장터 입찰결과 분석기(이러닝 사업/업체)</h4>
+                    <p class="text-xs text-slate-400">이러닝 사업/업체 데이터 분석 도구</p>
+                </a>
+                <!-- 기타 리스트 -->
+                <div class="space-y-2">
+                    <div class="flex items-center p-3 bg-slate-800 rounded-lg text-sm text-slate-300">
+                        <i class="fa-solid fa-terminal text-emerald-500 mr-3"></i> 나라장터 가격투찰 프로그램
+                    </div>
+                    <div class="flex items-center p-3 bg-slate-800 rounded-lg text-sm text-slate-300">
+                        <i class="fa-solid fa-file-lines text-emerald-500 mr-3"></i> 원고 → 스토리보드 변환기
+                    </div>
+                    <div class="flex items-center p-3 bg-slate-800 rounded-lg text-sm text-slate-300">
+                        <i class="fa-solid fa-image text-emerald-500 mr-3"></i> 스토리보드 내 텍스트, 스크립트 추출기
+                    </div>
+                    <div class="flex items-center p-3 bg-slate-800 rounded-lg text-sm text-slate-300">
+                        <i class="fa-solid fa-download text-emerald-500 mr-3"></i> 게티이미지 자동 다운로드 프로그램
+                    </div>
                 </div>
             </div>
         </div>

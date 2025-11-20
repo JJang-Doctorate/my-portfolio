@@ -1,13 +1,8 @@
 // Back to Top Button Logic
-
-// Get the button
 let backToTopBtn = document.getElementById("backToTopBtn");
-
-// When the user scrolls down 200px from the top of the document, show the button
 window.onscroll = function() {
     scrollFunction();
 };
-
 function scrollFunction() {
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         backToTopBtn.style.display = "block";
@@ -15,8 +10,6 @@ function scrollFunction() {
         backToTopBtn.style.display = "none";
     }
 }
-
-// When the user clicks on the button, scroll to the top of the document
 backToTopBtn.addEventListener("click", function() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 });
@@ -24,60 +17,67 @@ backToTopBtn.addEventListener("click", function() {
 // Dark Mode Toggle Logic
 const themeToggle = document.getElementById('themeToggle');
 const currentTheme = localStorage.getItem('theme');
-
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
-  
     if (currentTheme === 'dark') {
         themeToggle.checked = true;
     }
 }
-
 function switchTheme(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
-    } else {        
+    } else {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
     }
 }
-
 themeToggle.addEventListener('change', switchTheme, false);
 
-// Modal Logic
-const openModalTriggers = document.querySelectorAll('[data-modal-target]');
-const modals = document.querySelectorAll('.modal');
-
-openModalTriggers.forEach(trigger => {
-    trigger.addEventListener('click', () => {
-        const modal = document.querySelector(trigger.dataset.modalTarget);
-        openModal(modal);
-    });
+// New Modal Logic
+function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        document.querySelectorAll('.modal.active').forEach(modal => {
+            closeModal(modal.id);
+        });
+    }
 });
 
-modals.forEach(modal => {
-    const closeButton = modal.querySelector('.close-button');
-    closeButton.addEventListener('click', () => {
-        closeModal(modal);
-    });
+// Universal closing logic for all modals
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.modal').forEach(modalEl => {
+        // Add background click to close
+        modalEl.addEventListener('click', (e) => {
+            // New modals from 참고.html have this built-in, but this won't interfere.
+            // This is mainly for the old modals.
+            if (e.target === modalEl) {
+                closeModal(modalEl.id);
+            }
+        });
 
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal(modal);
+        // Add close button click (for old modals with .close-button)
+        const closeButton = modalEl.querySelector('.close-button');
+        if (closeButton) {
+            closeButton.addEventListener('click', () => {
+                closeModal(modalEl.id);
+            });
         }
     });
 });
-
-function openModal(modal) {
-    if (modal == null) return;
-    modal.style.display = 'block';
-}
-
-function closeModal(modal) {
-    if (modal == null) return;
-    modal.style.display = 'none';
-}
 
 // Scroll Animation Logic
 const observer = new IntersectionObserver((entries) => {
@@ -88,6 +88,5 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 });
-
 const fadeInSections = document.querySelectorAll('.fade-in-section');
 fadeInSections.forEach((section) => observer.observe(section));
