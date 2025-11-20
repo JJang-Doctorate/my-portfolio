@@ -78,3 +78,16 @@ function closeModal(modal) {
     if (modal == null) return;
     modal.style.display = 'none';
 }
+
+// Scroll Animation Logic
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+});
+
+const fadeInSections = document.querySelectorAll('.fade-in-section');
+fadeInSections.forEach((section) => observer.observe(section));

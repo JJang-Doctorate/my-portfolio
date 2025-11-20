@@ -350,7 +350,7 @@ a.portfolio-category-group {
 .modal-content {
     background-color: var(--bg-color);
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     color: var(--text-color);
     margin: 10% auto;
     padding: 40px;
@@ -364,6 +364,7 @@ a.portfolio-category-group {
 
 [data-theme='dark'] .modal-content {
     background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
 }
 
 #career-modal .modal-content {
@@ -381,6 +382,11 @@ a.portfolio-category-group {
     /* Still white in dark mode for career modal */
     color: #333;
     border: 1px solid #ddd;
+}
+
+[data-theme='dark'] header {
+    box-shadow: 5px 5px 10px #0b0b0b,
+                -5px -5px 10px #1d1d1d;
 }
 
 .section-title {
@@ -476,194 +482,6 @@ a.portfolio-category-group {
     width: 60px;
     height: 34px;
     margin-left: 20px;
-}
-
-.theme-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked+.slider {
-    background-color: var(--primary-color);
-}
-
-input:checked+.slider:before {
-    transform: translateX(26px);
-}
-
-/* Hover effects for image banners */
-.banner-hover-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 3;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-}
-
-.image-banner::before {
-    /* The overlay */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    /* The border-radius should be slightly smaller than the parent to not cover the border */
-    border-radius: 6px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-}
-
-.image-banner:hover::before,
-.image-banner:hover .banner-hover-text {
-    opacity: 1;
-}
-
-.highlight-text {
-    color: #007bff;
-    /* blue */
-    font-weight: bold;
-    animation: blink-animation 1s infinite;
-}
-
-.highlight-green {
-    color: #28a745;
-    /* green */
-    font-weight: bold;
-    animation: blink-animation 1s infinite;
-}
-
-.black-bold {
-    color: black;
-    font-weight: bold;
-}
-
-.title-icon {
-    height: 240px;
-    /* Increased height */
-    width: auto;
-    /* Maintain aspect ratio */
-    margin-right: 20px;
-    /* Increased margin */
-}
-
-.section-container {
-    display: flex;
-    align-items: flex-start;
-    /* Align items to the top */
-    margin-bottom: 20px;
-}
-
-.section-content {
-    flex: 1;
-}
-
-.modal-hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.title-icon {
-    height: 240px;
-    /* Increased height */
-    width: auto;
-    /* Maintain aspect ratio */
-    margin-right: 20px;
-    /* Increased margin */
-}
-
-.section-container {
-    display: flex;
-    align-items: flex-start;
-    /* Align items to the top */
-    margin-bottom: 20px;
-}
-
-.section-content {
-    flex: 1;
-}
-
-@keyframes blink-animation {
-    50% {
-        opacity: 0.5;
-    }
-}
-
-/* Program Banners in Modal */
-.program-banners-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-    /* Remove gap, use borders for separation */
-    margin-top: 20px;
-    border-top: 1px solid var(--border-color);
-    /* Add a top border to the container */
-}
-
-.program-banner-item {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid var(--border-color);
-    padding: 16px 0px 16px 30px;
-    /* Adjust padding for the icon */
-    text-align: left;
-    transition: background-color 0.3s ease;
-    position: relative;
-    /* For the pseudo-element */
-    box-shadow: none;
-    border-radius: 0;
-}
-
-.program-banner-item::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    background-color: var(--border-color);
-    /* Start with a neutral color */
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-}
-
-.program-banner-item:hover {
-    background-color: var(--card-bg-color);
-    transform: none;
 }
 
 .theme-switch input {
@@ -1121,4 +939,16 @@ input:checked+.slider:before {
     .timeline-dot {
         left: -18px;
     }
+}
+
+/* Scroll Animation */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
